@@ -7,12 +7,17 @@ import PeopleList from "../../components/PeopleList/PeopleList";
 import TopicsToFollow from "../../components/TopicsToFollow/TopicsToFollow";
 import articles from "./articles.json";
 import "./styles.scss";
+import {getArticle} from "../../Api/articles"
 
 
 export default class Home extends Component {
   state = {
     articles: articles,
   };
+  componentDidMount = async()=>{
+    const response = await getArticle()
+    console.log(response)
+  }
   render() {
     return (
       <div>
