@@ -9,16 +9,22 @@ import CategoryPicker from "../../components/CategoryPicker";
 export default class NewStory extends Component {
   state = {
     html: "",
+    article:null,
   };
   editor = React.createRef();
   onChange = (html) => {
     this.setState({ html })
-    console.log(html)
+   
+    console.log(html,"onchange")
   };
+
+
+  // {this.setState({blabla:this.state.html})}
   onKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       this.editor && this.editor.current.focus();
+      console.log(this.editor,"onKeyDown")
     }
   };
   render() {
