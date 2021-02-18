@@ -19,7 +19,12 @@ export default class NewStory extends Component {
   };
 
 
-  // {this.setState({blabla:this.state.html})}
+  mushiFushat = ()=>{
+      this.setState({article:{
+        headLine:this.state.html,
+        
+      }})
+  }
   onKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
